@@ -1,38 +1,128 @@
-.App {
+/* 🌈 Animated Gradient Background */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ff2d55);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  height: 100vh;
+}
+
+/* Background animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+/* 🧊 Glassmorphism Card */
+.clock-container {
+  width: 420px;
+  margin: 80px auto;
+  padding: 35px;
   text-align: center;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 25px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.1) inset;
+
+  color: white;
+  transition: transform 0.3s ease;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.clock-container:hover {
+  transform: scale(1.03);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 🧠 Title */
+.clock-container h1 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* ⏰ Digital Clock Style */
+.time-display {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 25px 0;
+
+  font-family: "Courier New", monospace;
+  color: #00fff7;
+
+  text-shadow:
+    0 0 10px #00fff7,
+    0 0 20px #00fff7,
+    0 0 40px #00fff7;
+}
+
+/* ⏱ Alarm Time Text */
+p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* 🔘 Buttons */
+button {
+  padding: 14px 28px;
+  font-size: 17px;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-top: 18px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* 🟢 Enable Button */
+.btn-enable {
+  background: linear-gradient(45deg, #00c853, #64dd17);
+  box-shadow: 0 0 15px rgba(0, 255, 100, 0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-enable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0, 255, 100, 1);
+}
+
+/* 🔴 Disable Button */
+.btn-disable {
+  background: linear-gradient(45deg, #ff1744, #ff5252);
+  box-shadow: 0 0 15px rgba(255, 50, 50, 0.8);
+}
+
+.btn-disable:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 50, 50, 1);
+}
+
+
+/* 🚨 Alarm Message */
+.alarm-message {
+  margin-top: 28px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #ff003c;
+
+  text-shadow:
+    0 0 10px #ff003c,
+    0 0 25px #ff003c,
+    0 0 45px #ff003c;
+
+  animation: pulse 1s infinite;
+}
+
+/* 🔴 Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
 }
